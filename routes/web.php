@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('paypal');
 });
+
+Route::post('/paypal', 'PaymentController@payWithPaypal')->name('paypal');
+// route for check status of the payment
+Route::get('status', 'PaymentController@getPaymentStatus');
